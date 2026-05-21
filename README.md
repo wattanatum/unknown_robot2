@@ -30,22 +30,102 @@ This project contains the robot description, Gazebo simulation files, navigation
 
 ```text
 unknown_robot2_ws/
-├── src/
-│   ├── unknown_robot2_description/
-│   │   ├── urdf/
-│   │   ├── meshes/
-│   │   └── launch/
-│   ├── unknown_robot2_navigation/
-│   │   ├── config/
-│   │   ├── launch/
-│   │   ├── maps/
-│   │   └── rviz/
-│   ├── unknown_robot2_bringup/
-│   │   └── launch/
-│   └── ...
-├── README.md
 ├── LICENSE
-└── .gitignore
+├── project_structure.txt
+├── README.md
+└── src
+    ├── unknown_robot2_bringup
+    │   ├── LICENSE
+    │   ├── package.xml
+    │   ├── resource
+    │   │   └── unknown_robot2_bringup
+    │   ├── setup.cfg
+    │   ├── setup.py
+    │   ├── test
+    │   │   ├── test_copyright.py
+    │   │   ├── test_flake8.py
+    │   │   └── test_pep257.py
+    │   └── unknown_robot2_bringup
+    │       └── __init__.py
+    ├── unknown_robot2_description
+    │   ├── CMakeLists.txt
+    │   ├── include
+    │   │   └── unknown_robot2_description
+    │   ├── launch
+    │   │   └── display.launch.py
+    │   ├── LICENSE
+    │   ├── media
+    │   │   └── materials
+    │   ├── meshes
+    │   ├── package.xml
+    │   ├── rviz
+    │   │   ├── nav2_test.rviz
+    │   │   ├── odom_test.rviz
+    │   │   ├── slam_toolbox_test.rviz
+    │   │   └── unknown_robot2.rviz
+    │   ├── src
+    │   └── urdf
+    │       └── unknown_robot2.urdf.xacro
+    ├── unknown_robot2_docking
+    │   ├── package.xml
+    │   ├── resource
+    │   │   └── unknown_robot2_docking
+    │   ├── setup.cfg
+    │   ├── setup.py
+    │   ├── test
+    │   │   ├── test_copyright.py
+    │   │   ├── test_flake8.py
+    │   │   └── test_pep257.py
+    │   └── unknown_robot2_docking
+    │       ├── aruco_simple_docking.py
+    │       └── __init__.py
+    ├── unknown_robot2_gazebo
+    │   ├── config
+    │   │   └── empty_world.config
+    │   ├── launch
+    │   │   ├── empty_gazebo.launch.py
+    │   │   ├── gazebo.launch.py
+    │   │   └── gz_slam_world.launch.py
+    │   ├── LICENSE
+    │   ├── package.xml
+    │   ├── resource
+    │   │   └── unknown_robot2_gazebo
+    │   ├── setup.cfg
+    │   ├── setup.py
+    │   ├── test
+    │   │   ├── test_copyright.py
+    │   │   ├── test_flake8.py
+    │   │   └── test_pep257.py
+    │   ├── unknown_robot2_gazebo
+    │   │   ├── __init__.py
+    │   │   └── odom_to_tf.py
+    │   └── worlds
+    │       ├── auto_test_world.sdf
+    │       └── empty.sdf
+    └── unknown_robot2_navigation
+        ├── behavior_trees
+        │   └── nav_to_pose_clear_costmap.xml
+        ├── config
+        │   ├── nav2_map_params.yaml
+        │   └── nav2_slam_params.yaml
+        ├── launch
+        │   ├── nav2_map.launch.py
+        │   └── nav2_slam.launch.py
+        ├── LICENSE
+        ├── maps
+        │   ├── auto_test_map.pgm
+        │   └── auto_test_map.yaml
+        ├── package.xml
+        ├── resource
+        │   └── unknown_robot2_navigation
+        ├── setup.cfg
+        ├── setup.py
+        ├── test
+        │   ├── test_copyright.py
+        │   ├── test_flake8.py
+        │   └── test_pep257.py
+        └── unknown_robot2_navigation
+            └── __init__.py
 ```
 
 ## Requirements
