@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<robot name="unknown_robot2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ========================================================= -->
+  <!-- Materials -->
+  <!-- ========================================================= -->
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+
+  <material name="yellow">
+    <color rgba="0.9 0.8 0.0 1.0"/>
+  </material>
+
+
+  <!-- ========================================================= -->
+  <!-- Robot Properties -->
+  <!-- ========================================================= -->
+  <xacro:property name="base_length" value="0.50"/>
+  <xacro:property name="base_width" value="0.30"/>
+  <xacro:property name="base_height" value="0.20"/>
+
+  <xacro:property name="wheel_radius" value="0.05"/>
+  <xacro:property name="wheel_width" value="0.02"/>
+  <xacro:property name="wheel_separation" value="0.30"/>
+
+
+  <!-- ========================================================= -->
+  <!-- Base Footprint -->
+  <!-- ========================================================= -->
+  <link name="base_footprint"/>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.10" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- Base Link -->
+  <!-- ========================================================= -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="${base_length} ${base_width} ${base_height}"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="${base_length} ${base_width} ${base_height}"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="5.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.02" ixy="0.0" ixz="0.0"
+        iyy="0.02" iyz="0.0"
+        izz="0.04"/>
+    </inertial>
+  </link>
+
+
+  <!-- ========================================================= -->
+  <!-- Left Drive Wheel -->
+  <!-- ========================================================= -->
+  <link name="left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.2"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.001" ixy="0.0" ixz="0.0"
+        iyy="0.001" iyz="0.0"
+        izz="0.002"/>
+    </inertial>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0.15 -0.10" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- Right Drive Wheel -->
+  <!-- ========================================================= -->
+  <link name="right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.2"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.001" ixy="0.0" ixz="0.0"
+        iyy="0.001" iyz="0.0"
+        izz="0.002"/>
+    </inertial>
+  </link>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.15 -0.10" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- Front Caster -->
+  <!-- ========================================================= -->
+  <link name="front_caster">
+    <visual>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.0005" ixy="0.0" ixz="0.0"
+        iyy="0.0005" iyz="0.0"
+        izz="0.0005"/>
+    </inertial>
+  </link>
+
+  <joint name="front_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_caster"/>
+    <origin xyz="0.20 0 -0.10" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- Rear Caster -->
+  <!-- ========================================================= -->
+  <link name="rear_caster">
+    <visual>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.0005" ixy="0.0" ixz="0.0"
+        iyy="0.0005" iyz="0.0"
+        izz="0.0005"/>
+    </inertial>
+  </link>
+
+  <joint name="rear_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_caster"/>
+    <origin xyz="-0.20 0 -0.10" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- LiDAR Link -->
+  <!-- ========================================================= -->
+  <link name="lidar_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.04" length="0.10"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <cylinder radius="0.04" length="0.10"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.15"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.0002" ixy="0.0" ixz="0.0"
+        iyy="0.0002" iyz="0.0"
+        izz="0.0002"/>
+    </inertial>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.15 0 0.10" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- IMU Link -->
+  <!-- ========================================================= -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.05"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.00005" ixy="0.0" ixz="0.0"
+        iyy="0.00005" iyz="0.0"
+        izz="0.00005"/>
+    </inertial>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.08" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- Depth Camera Link -->
+  <!-- Replaces old camera position -->
+  <!-- ========================================================= -->
+  <link name="depth_camera_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.15 0.05"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.05 0.15 0.05"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.2"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.001" ixy="0.0" ixz="0.0"
+        iyy="0.001" iyz="0.0"
+        izz="0.002"/>
+    </inertial>
+  </link>
+
+  <joint name="depth_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="depth_camera_link"/>
+    <origin xyz="0.25 0 0.05" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ROS optical frame: z forward, x right, y down -->
+  <link name="depth_camera_optical_frame"/>
+
+  <joint name="depth_camera_optical_joint" type="fixed">
+    <parent link="depth_camera_link"/>
+    <child link="depth_camera_optical_frame"/>
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- GPS / NavSat Link -->
+  <!-- ========================================================= -->
+  <link name="gps_link">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.03"/>
+      </geometry>
+      <material name="yellow"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.08 0.08 0.03"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.0001" ixy="0.0" ixz="0.0"
+        iyy="0.0001" iyz="0.0"
+        izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <joint name="gps_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps_link"/>
+    <origin xyz="0.05 0 0.10" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ========================================================= -->
+  <!-- Gazebo Diff Drive Plugin for ros_gz / Gazebo Harmonic -->
+  <!-- ========================================================= -->
+  <gazebo>
+    <plugin
+      filename="gz-sim-diff-drive-system"
+      name="gz::sim::systems::DiffDrive">
+
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+
+      <wheel_separation>${wheel_separation}</wheel_separation>
+      <wheel_radius>${wheel_radius}</wheel_radius>
+
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
+
+      <odom_publish_frequency>50</odom_publish_frequency>
+
+    </plugin>
+  </gazebo>
+
+
+  <!-- ========================================================= -->
+  <!-- Gazebo LiDAR Sensor -->
+  <!-- Important: visualize=true shows laser rays in Gazebo -->
+  <!-- ========================================================= -->
+  <gazebo reference="lidar_link">
+    <sensor name="lidar_sensor" type="gpu_lidar">
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
+      <visualize>true</visualize>
+      <topic>/scan</topic>
+      <gz_frame_id>lidar_link</gz_frame_id>
+
+      <ray>
+        <scan>
+          <horizontal>
+            <!-- 720 samples gives smoother laser visualization -->
+            <samples>720</samples>
+            <resolution>1.0</resolution>
+
+            <!-- Full 360 degree LiDAR -->
+            <min_angle>-1.57079633</min_angle>
+            <max_angle>1.57079633</max_angle>
+          </horizontal>
+        </scan>
+
+        <range>
+          <min>0.20</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+    </sensor>
+  </gazebo>
+
+
+  <!-- ========================================================= -->
+  <!-- Gazebo IMU Sensor -->
+  <!-- ========================================================= -->
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>/imu</topic>
+    </sensor>
+  </gazebo>
+
+
+  <!-- ========================================================= -->
+  <!-- Gazebo RGBD / Depth Camera Sensor -->
+  <!-- ========================================================= -->
+  <gazebo reference="depth_camera_link">
+    <sensor name="depth_camera_sensor" type="rgbd_camera">
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
+      <visualize>true</visualize>
+      <topic>/camera/depth</topic>
+
+      <camera>
+        <horizontal_fov>1.5708</horizontal_fov>
+
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+
+        <clip>
+          <near>0.05</near>
+          <far>10.0</far>
+        </clip>
+      </camera>
+    </sensor>
+  </gazebo>
+
+
+  <!-- ========================================================= -->
+  <!-- Gazebo GPS / NavSat Sensor -->
+  <!-- Empty world must have spherical_coordinates for GPS -->
+  <!-- ========================================================= -->
+  <gazebo reference="gps_link">
+    <sensor name="gps_sensor" type="navsat">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <visualize>true</visualize>
+      <topic>/gps/fix</topic>
+    </sensor>
+  </gazebo>
+
+
+  <!-- ========================================================= -->
+  <!-- Gazebo Materials -->
+  <!-- ========================================================= -->
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="front_caster">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="rear_caster">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="lidar_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="imu_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="depth_camera_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="gps_link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+</robot>

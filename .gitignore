@@ -1,0 +1,10 @@
+build/
+install/
+log/
+.vscode/
+.idea/
+*.pyc
+__pycache__/
+*.db
+*.sqlite
+*.sqlite3
