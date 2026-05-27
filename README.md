@@ -31,7 +31,6 @@ This project contains the robot description, Gazebo simulation files, navigation
 ```text
 unknown_robot2_ws/
 ├── LICENSE
-├── project_structure.txt
 ├── README.md
 └── src
     ├── unknown_robot2_bringup

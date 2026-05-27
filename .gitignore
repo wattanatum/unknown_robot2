@@ -1,10 +1,33 @@
+# ROS 2 build output
 build/
 install/
 log/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+
+# Virtual environments
+venv/
+.env/
+
+# Editors
 .vscode/
 .idea/
-*.pyc
-__pycache__/
-*.db
-*.sqlite
-*.sqlite3
+
+# ROS bags / logs
+*.bag
+*.db3
+*.mcap
+*.log
+
+# System files
+.DS_Store
+
+cmd
+package_req
+project_structure.txt
