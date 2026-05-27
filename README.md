@@ -191,13 +191,13 @@ ros2 launch unknown_robot2_description display.launch.py
 ### 1. Launch Gazebo Simulation
 
 ```bash
-ros2 launch unknown_robot2_bringup gazebo.launch.py
+ros2 launch unknown_robot2_gazebo gazebo.launch.py 
 ```
 
 ### 3. Run SLAM Mapping
 
 ```bash
-ros2 launch unknown_robot2_navigation slam_toolbox_mapping.launch.py
+ros2 launch unknown_robot2_navigation nav2_slam.launch.py
 ```
 
 ### 2. Launch RViz2
