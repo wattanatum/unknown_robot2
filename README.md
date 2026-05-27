@@ -189,7 +189,13 @@ echo "source ~/unknown_robot2_ws/install/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Quickstart
+# Quickstart
+
+## check robot TF
+```bash
+ros2 launch unknown_robot2_description display.launch.py
+```
+## SLAM Toolbox Mapping
 
 ### 1. Launch Gazebo Simulation
 
