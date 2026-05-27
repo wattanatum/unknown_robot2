@@ -1,5 +1,9 @@
 # unknown_robot2
 
+<p align="center">
+  <img src="assets/unknow_robot.gif" alt="Unknown robot tf" width="700"/>
+</p>
+
 `unknown_robot2` is a ROS 2 mobile robot project for simulation, SLAM, localization, and autonomous navigation using Nav2.
 
 This project contains the robot description, Gazebo simulation files, navigation configuration, maps, launch files, and RViz setup for a custom differential-drive mobile robot.
@@ -204,7 +208,7 @@ rviz2
 Open RViz2 config in this path:
 
 ```text
-~/unknown_robot2_ws/src/unknown_robot2_description/rviz2/unknown_robot2.rviz
+~/unknown_robot2_ws/src/unknown_robot2_description/rviz2/slam_toolbox_test.rviz
 ```
 
 ### 4. Save Map
