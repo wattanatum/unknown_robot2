@@ -284,15 +284,6 @@ colcon build --symlink-install
 source install/setup.bash
 ```
 
-## Push Updates to GitHub
-
-```bash
-cd ~/unknown_robot2_ws
-git add README.md src .gitignore
-git commit -m "Update README"
-git push
-```
-
 ## Troubleshooting
 
 ### Robot does not move
@@ -329,10 +320,6 @@ Check:
 ```bash
 ros2 run tf2_ros tf2_echo odom base_link
 ```
-
-## License
-
-This project is licensed under the terms of the license file included in this repository.
 
 ## Author
 
