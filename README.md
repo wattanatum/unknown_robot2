@@ -197,16 +197,16 @@ source ~/.bashrc
 ros2 launch unknown_robot2_bringup gazebo.launch.py
 ```
 
-### 2. Launch RViz2
-
-```bash
-ros2 launch unknown_robot2_navigation rviz.launch.py
-```
-
 ### 3. Run SLAM Mapping
 
 ```bash
 ros2 launch unknown_robot2_navigation slam_toolbox_mapping.launch.py
+```
+
+### 2. Launch RViz2
+
+```bash
+rviz2
 ```
 
 ### 4. Save Map
