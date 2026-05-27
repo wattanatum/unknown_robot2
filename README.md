@@ -65,19 +65,6 @@ unknown_robot2_ws/
     │   ├── src
     │   └── urdf
     │       └── unknown_robot2.urdf.xacro
-    ├── unknown_robot2_docking
-    │   ├── package.xml
-    │   ├── resource
-    │   │   └── unknown_robot2_docking
-    │   ├── setup.cfg
-    │   ├── setup.py
-    │   ├── test
-    │   │   ├── test_copyright.py
-    │   │   ├── test_flake8.py
-    │   │   └── test_pep257.py
-    │   └── unknown_robot2_docking
-    │       ├── aruco_simple_docking.py
-    │       └── __init__.py
     ├── unknown_robot2_gazebo
     │   ├── config
     │   │   └── empty_world.config
@@ -191,7 +178,7 @@ source ~/.bashrc
 
 # Quickstart
 
-## check robot TF
+## Check robot TF
 ```bash
 ros2 launch unknown_robot2_description display.launch.py
 ```
@@ -213,6 +200,11 @@ ros2 launch unknown_robot2_navigation slam_toolbox_mapping.launch.py
 
 ```bash
 rviz2
+```
+Open RViz2 config in this path:
+
+```text
+~/unknown_robot2_ws/src/unknown_robot2_description/rviz2/unknown_robot2.rviz
 ```
 
 ### 4. Save Map
