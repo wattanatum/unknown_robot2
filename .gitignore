@@ -28,6 +28,8 @@ venv/
 # System files
 .DS_Store
 
+src/unknown_robot2_docking/*
+
 cmd
 package_req
 project_structure.txt

@@ -188,19 +188,29 @@ ros2 launch unknown_robot2_description display.launch.py
 ```
 ## SLAM Toolbox Mapping
 
-### 1. Launch Gazebo Simulation
+<p align="center">
+  <img src="assets/unknown_robot_mapping.gif" alt="Unknown robot tf" width="700"/>
+</p>
+
+### Terminal 1: Launch Gazebo Simulation
 
 ```bash
 ros2 launch unknown_robot2_gazebo gazebo.launch.py 
 ```
 
-### 3. Run SLAM Mapping
+### Terminal 2: Launch SLAM Mapping
+
+```bash
+ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true
+```
+
+### Terminal 3: Launch nav2 for move and avoid obstcle whlie mapping
 
 ```bash
 ros2 launch unknown_robot2_navigation nav2_slam.launch.py
 ```
 
-### 2. Launch RViz2
+### Terminal 4: Run RViz2
 
 ```bash
 rviz2
@@ -211,27 +221,41 @@ Open RViz2 config in this path:
 ~/unknown_robot2_ws/src/unknown_robot2_description/rviz2/slam_toolbox_test.rviz
 ```
 
-### 4. Save Map
+### 5. Save Map
 
 ```bash
-ros2 run nav2_map_server map_saver_cli -f ~/unknown_robot2_ws/src/unknown_robot2_navigation/maps/unknown_map
+ros2 run nav2_map_server map_saver_cli \
+  -f ~/unknown_robot2_ws/src/unknown_robot2_navigation/maps/auto_test_map
 ```
 
-### 5. Run Navigation with Saved Map
+## Navigation with Saved Map
+
+<p align="center">
+  <img src="unknown_robot_nav2.gif" alt="Unknown robot tf" width="700"/>
+</p>
+
+### Terminal 1: Launch Gazebo Simulation
 
 ```bash
-ros2 launch unknown_robot2_navigation nav2.launch.py
+ros2 launch unknown_robot2_gazebo gazebo.launch.py 
 ```
 
-## Main Launch Files
+### Terminal 2: Launch nav2 with saved map
 
-| Launch File | Description |
-|---|---|
-| `gazebo.launch.py` | Start robot simulation in Gazebo |
-| `rviz.launch.py` | Open RViz2 visualization |
-| `slam_toolbox_mapping.launch.py` | Start SLAM Toolbox mapping |
-| `nav2.launch.py` | Start Nav2 navigation |
-| `cartographer_mapping.launch.py` | Optional Cartographer mapping |
+```bash
+ros2 launch unknown_robot2_navigation nav2_map.launch.py
+```
+
+### Terminal 3: Run RViz2
+
+```bash
+rviz2
+```
+Open RViz2 config in this path:
+
+```text
+~/unknown_robot2_ws/src/unknown_robot2_description/rviz2/nav2_test.rviz
+```
 
 ## Important ROS 2 Topics
 
@@ -326,3 +350,4 @@ ros2 run tf2_ros tf2_echo odom base_link
 
 Kasiphat Uppaphak  
 GitHub: [wattanatum](https://github.com/wattanatum)
+
