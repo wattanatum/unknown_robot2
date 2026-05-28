@@ -231,7 +231,7 @@ ros2 run nav2_map_server map_saver_cli \
 ## Navigation with Saved Map
 
 <p align="center">
-  <img src="unknown_robot_nav2.gif" alt="Unknown robot tf" width="700"/>
+  <img src="assets/unknown_robot_nav2.gif" alt="Unknown robot nav2" width="700"/>
 </p>
 
 ### Terminal 1: Launch Gazebo Simulation
