@@ -132,16 +132,24 @@ Install common dependencies:
 
 ```bash
 sudo apt update
+
 sudo apt install -y \
+  ros-jazzy-ros-gz-bridge \
+  ros-jazzy-ros-gz-sim \
+  ros-jazzy-slam-toolbox \
   ros-jazzy-navigation2 \
   ros-jazzy-nav2-bringup \
-  ros-jazzy-slam-toolbox \
-  ros-jazzy-robot-state-publisher \
-  ros-jazzy-joint-state-publisher \
-  ros-jazzy-joint-state-publisher-gui \
+  ros-jazzy-tf2-ros \
+  ros-jazzy-tf2-tools \
   ros-jazzy-rviz2 \
-  ros-jazzy-ros-gz \
-  ros-jazzy-xacro
+  ros-jazzy-nav-msgs \
+  ros-jazzy-geometry-msgs \
+  ros-jazzy-sensor-msgs \
+  ros-jazzy-tf2-msgs \
+  python3-colcon-common-extensions \
+  python3-rosdep \
+  python3-venv \
+  python3-pip
 ```
 
 ## Installation
