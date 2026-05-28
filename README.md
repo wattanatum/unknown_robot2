@@ -204,7 +204,7 @@ ros2 launch unknown_robot2_gazebo gazebo.launch.py
 ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true
 ```
 
-### Terminal 3: Launch nav2 for move and avoid obstcle whlie mapping
+### Terminal 3: Launch nav2 for move and avoid obstacle whlie mapping
 
 ```bash
 ros2 launch unknown_robot2_navigation nav2_slam.launch.py
