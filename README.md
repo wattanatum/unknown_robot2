@@ -1,7 +1,7 @@
 # unknown_robot2
 
 <p align="center">
-  <img src="assets/unknow_robot.gif" alt="Unknown robot tf" width="700"/>
+  <img src="assets/unknow_robot.gif" alt="Unknown robot tf" width="800"/>
 </p>
 
 `unknown_robot2` is a ROS 2 mobile robot project for simulation, SLAM, localization, and autonomous navigation using Nav2.
@@ -197,7 +197,7 @@ ros2 launch unknown_robot2_description display.launch.py
 ## SLAM Toolbox Mapping
 
 <p align="center">
-  <img src="assets/unknown_robot_mapping.gif" alt="Unknown robot tf" width="700"/>
+  <img src="assets/unknown_robot_mapping.gif" alt="Unknown robot tf" width="800"/>
 </p>
 
 ### Terminal 1: Launch Gazebo Simulation
@@ -239,7 +239,7 @@ ros2 run nav2_map_server map_saver_cli \
 ## Navigation with Saved Map
 
 <p align="center">
-  <img src="assets/unknown_robot_nav2.gif" alt="Unknown robot nav2" width="700"/>
+  <img src="assets/unknown_robot_nav2.gif" alt="Unknown robot nav2" width="800"/>
 </p>
 
 ### Terminal 1: Launch Gazebo Simulation
