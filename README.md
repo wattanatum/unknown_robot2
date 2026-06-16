@@ -1,7 +1,7 @@
 # unknown_robot2
 
 <p align="center">
-  <img src="assets/unknow_robot.gif" alt="Unknown robot tf" width="900"/>
+  <img src="assets/unknow_robot.gif" alt="Unknown robot tf" width="850"/>
 </p>
 
 `unknown_robot2` is a ROS 2 mobile robot project for simulation, SLAM, localization, and autonomous navigation using Nav2.
